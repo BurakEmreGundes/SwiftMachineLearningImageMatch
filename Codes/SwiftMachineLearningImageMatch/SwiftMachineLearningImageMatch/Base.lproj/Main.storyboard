@@ -1,24 +1,77 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13122.16" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="19529" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13104.12"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19519"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
         <!--View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="SwiftMachineLearningImageMatch" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" xcode11CocoaTouchSystemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="GYg-in-pei">
+                                <rect key="frame" x="60" y="85" width="294" height="343"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="294" id="38A-F6-vkn"/>
+                                    <constraint firstAttribute="height" constant="343" id="5Jo-bl-HNA"/>
+                                </constraints>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="aZa-Du-ckI">
+                                <rect key="frame" x="60" y="473" width="295" height="96"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="96" id="qbZ-su-Pmq"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="EJc-g2-KOo">
+                                <rect key="frame" x="147" y="626" width="121" height="60"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="60" id="AW0-cN-hJa"/>
+                                </constraints>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain" title="Change"/>
+                                <connections>
+                                    <action selector="changeButtonClicked:" destination="BYZ-38-t0r" eventType="touchUpInside" id="enB-yX-4DY"/>
+                                </connections>
+                            </button>
+                        </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="GYg-in-pei" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="7TE-jR-7OF"/>
+                            <constraint firstItem="EJc-g2-KOo" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="147" id="Au4-6Z-yGJ"/>
+                            <constraint firstItem="aZa-Du-ckI" firstAttribute="top" secondItem="GYg-in-pei" secondAttribute="bottom" constant="45" id="CbB-rA-n3w"/>
+                            <constraint firstItem="GYg-in-pei" firstAttribute="leading" secondItem="aZa-Du-ckI" secondAttribute="leading" id="HrP-Yn-dyp"/>
+                            <constraint firstItem="aZa-Du-ckI" firstAttribute="centerX" secondItem="EJc-g2-KOo" secondAttribute="centerX" id="PAH-fV-ztg"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="EJc-g2-KOo" secondAttribute="bottom" constant="176" id="atL-zG-TeT"/>
+                            <constraint firstItem="GYg-in-pei" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="41" id="hD7-Zj-TjX"/>
+                            <constraint firstItem="GYg-in-pei" firstAttribute="trailing" secondItem="aZa-Du-ckI" secondAttribute="trailing" constant="-1" id="shg-cT-Y6x"/>
+                            <constraint firstItem="EJc-g2-KOo" firstAttribute="top" secondItem="aZa-Du-ckI" secondAttribute="bottom" constant="57" id="vqg-Mz-uVH"/>
+                            <constraint firstItem="GYg-in-pei" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="60" id="zhp-eR-rcj"/>
+                        </constraints>
                     </view>
+                    <connections>
+                        <outlet property="imageDescLabel" destination="aZa-Du-ckI" id="y0h-OB-S3f"/>
+                        <outlet property="imageView" destination="GYg-in-pei" id="f5I-A7-Icb"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="34.782608695652179" y="71.651785714285708"/>
         </scene>
     </scenes>
+    <resources>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
 </document>
